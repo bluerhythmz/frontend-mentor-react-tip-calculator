@@ -40,6 +40,7 @@ body {
   flex-direction: column;
   margin: 0 auto;
   width: 100%;
+  max-width: 92rem;
 }
 
 .logo {
@@ -177,4 +178,10 @@ main {
   border-radius: 5px;
   color: var(--bg-primary);
   padding: .45em 0;
+}
+
+.error {
+  position: absolute;
+  right: 0;
+  display: none;
 }
