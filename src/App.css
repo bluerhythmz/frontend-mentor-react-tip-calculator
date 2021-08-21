@@ -89,6 +89,7 @@ main {
   border-radius: 5px;
   padding: .3em;
   font-weight: 700;
+  font-family: 'Space Mono', monospace;
 }
 
 .form__input:focus {
@@ -205,10 +206,28 @@ main {
   background-color: var(--button-active);
 }
 
+.no-error {
+  display: none;
+}
+
 .error {
   position: absolute;
+  top: -2.9rem;
   right: 0;
-  display: none;
+  display: block;
+  color: var(--error);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.37rem;
+}
+
+.error-border:focus {
+  outline: 0;
+  border: 2px solid var(--error);
+}
+
+.no-bill {
+  color: var(--label-text-light);
 }
 
 @media (min-width: 1200px) {
