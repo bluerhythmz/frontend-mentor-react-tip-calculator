@@ -91,6 +91,11 @@ main {
   font-weight: 700;
 }
 
+.form__input:focus {
+  outline: none;
+  border: 2px solid var(--text-primary);
+}
+
 .input-wrapper {
   position: relative;
 }
@@ -119,6 +124,12 @@ main {
   border-radius: 5px;
   margin-bottom: 1.6rem;
   padding: .2em 0;
+  cursor: pointer;
+}
+
+.tip-button:hover {
+  background-color: var(--button-hover);
+  color: var(--input-text);
 }
 
 .custom-tip {
@@ -178,10 +189,60 @@ main {
   border-radius: 5px;
   color: var(--bg-primary);
   padding: .45em 0;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: var(--button-hover);
+}
+
+.submit-btn:disabled {
+  background-color: var(--button-disabled-bg);
+  cursor: not-allowed;
+}
+
+.active {
+  background-color: var(--button-active);
 }
 
 .error {
   position: absolute;
   right: 0;
   display: none;
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    height: 100vh;
+  }
+  .logo {
+    margin-top: 0;
+    margin-bottom: 8.7rem;
+  }
+  .form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4.2rem;
+  }
+  .tip-button {
+    width: 30%;
+  }
+  .input-group {
+    max-width: 45%;
+  }
+  .custom-tip {
+    width: 30%;
+  }
+  .custom-tip::-moz-placeholder {
+    text-align: center;
+  }
+  .display {
+    min-width: 45%;
+    margin-top: 0;
+    padding: 5.7rem 3.4rem 4.7rem 3.4rem;
+  }
+  .submit-btn {
+    margin-top: 10rem;
+  }
 }
