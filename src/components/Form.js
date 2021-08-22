@@ -41,17 +41,18 @@ const Form = () => {
   };
 
   const handleCustomTipChange = (e) => {
-    if (e.target.value === 0) {
+    const value = parseInt(e.target.value)
+    if (value === 0) {
       return setCustomTipPercent("");
     }
-    if (e.target.value < 10) {
+    if (value < 10) {
       setActiveButton("");
       setTipPercent(0);
-      return setCustomTipPercent(`0${e.target.value}`);
+      return setCustomTipPercent(`0${value}`);
     }
     setTipPercent(0);
     setActiveButton("");
-    setCustomTipPercent(e.target.value);
+    setCustomTipPercent(value);
   };
 
   const handleReset = () => {
