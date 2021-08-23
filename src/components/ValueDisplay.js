@@ -16,8 +16,8 @@ const ValueDisplay = ({
         <div className="display__value">
           $
           {customTipAmount
-            ? customTipAmount.toFixed(2)
-            : tipAmount.toFixed(2)}
+            ? customTipAmount.toLocaleString('EN', {minimumFractionDigits: 2, maximumFractionDigits: 2})
+            : tipAmount.toLocaleString('EN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
         </div>
       </div>
       <div className="display__row">
@@ -28,8 +28,8 @@ const ValueDisplay = ({
         <div className="display__value">
           $
           {customTipTotal
-            ? customTipTotal.toFixed(2)
-            : total.toFixed(2)}
+            ? customTipTotal.toLocaleString('EN', {minimumFractionDigits: 2, maximumFractionDigits: 2})
+            : total.toLocaleString('EN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
         </div>
       </div>
       <button

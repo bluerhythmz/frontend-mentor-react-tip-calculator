@@ -5,7 +5,7 @@ import ValueDisplay from "./ValueDisplay";
 import { useState } from "react";
 
 const Form = () => {
-  const [bill, setBill] = useState("0");
+  const [bill, setBill] = useState('');
   const [people, setPeople] = useState("");
   const [tipPercent, setTipPercent] = useState(0);
   const [customTipPercent, setCustomTipPercent] = useState("");
@@ -25,16 +25,15 @@ const Form = () => {
   };
 
   const handleBillChange = (e) => {
-    if (e.target.value === "") {
-      return setBill("0");
-    }
+    if (isNaN(e.target.value)) return
     setBill(e.target.value);
   };
 
   const handlePeopleChange = (e) => {
-    if (e.target.value === "") {
-      setError(true);
-      return setPeople("0");
+    if (isNaN(e.target.value)) return
+    if (e.target.value === "0") {
+       setError(true);
+       return setPeople(e.target.value) 
     }
     setError(false);
     setPeople(e.target.value);
@@ -64,8 +63,8 @@ const Form = () => {
     setError("");
   };
 
-  let tipAmount = parseInt(bill) * `.${parseInt(tipPercent)}`;
-  let customTipAmount = parseInt(bill) * `.${parseInt(customTipPercent)}`;
+  let tipAmount = bill === '' ? 0 : parseInt(bill) * `.${parseInt(tipPercent)}`;
+  let customTipAmount = parseInt(bill) * `.${customTipPercent}`;
   let total = people ? (parseInt(bill) + tipAmount) / parseInt(people) : 0;
   let customTipTotal =
     people && customTipAmount
@@ -85,8 +84,9 @@ const Form = () => {
               name="bill"
               id="bill"
               value={bill}
+              placeholder="0"
               onChange={handleBillChange}
-              className={`form__input --bill ${bill === "0" ? "no-bill" : ""}`}
+              className={`form__input --bill`}
             />
             <img src={dollarSign} alt="dollar-sign" className="input-icon" />
           </div>
