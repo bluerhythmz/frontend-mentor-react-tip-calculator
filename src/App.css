@@ -151,6 +151,7 @@ body {
   border-radius: 1.5rem;
   padding: 3.7rem 2.4rem 2.7rem 2.4rem;
   margin-top: 3.2rem;
+  max-width: 37rem;
 }
 
 .display__row {
@@ -179,6 +180,10 @@ body {
   font-weight: 700;
   letter-spacing: -.67px;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .submit-btn {
