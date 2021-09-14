@@ -13,7 +13,7 @@ const Form = () => {
   const buttonValues = [5, 10, 15, 25, 50];
 
   const handleClick = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     setTipPercent(e.target.value);
     setCustomTipPercent("");
     setActiveButton(e.target.value);
@@ -48,8 +48,8 @@ const Form = () => {
     setError("");
   };
 
-  let tipAmount = parseInt(bill) * `${parseInt(tipPercent) / 100}`;
-  let customTipAmount = parseInt(bill) * `${parseInt(customTipPercent) / 100}`;
+  let tipAmount = parseInt(bill) * (parseInt(tipPercent) / 100);
+  let customTipAmount = parseInt(bill) * (parseInt(customTipPercent) / 100);
   let total = people > 0 ? (parseInt(bill) + tipAmount) / parseInt(people) : 0;
   let customTipTotal =
     people && customTipAmount
