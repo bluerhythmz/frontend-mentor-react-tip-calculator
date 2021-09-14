@@ -6,6 +6,13 @@ const ValueDisplay = ({
   handleReset,
 }) => {
   let noTotal = total ? false : true;
+  const getValueWithDecimals = (num) => {
+    if (!num) {
+      return "0.00";
+    }
+
+    return num.toFixed(2);
+  };
   return (
     <div className="display">
       <div className="display__row">
@@ -16,8 +23,8 @@ const ValueDisplay = ({
         <div className="display__value">
           $
           {customTipAmount
-            ? customTipAmount.toFixed(2)
-            : tipAmount.toFixed(2)}
+            ? getValueWithDecimals(customTipAmount)
+            : getValueWithDecimals(tipAmount)}
         </div>
       </div>
       <div className="display__row">
@@ -28,8 +35,8 @@ const ValueDisplay = ({
         <div className="display__value">
           $
           {customTipTotal
-            ? customTipTotal.toFixed(2)
-            : total.toFixed(2)}
+            ? getValueWithDecimals(customTipTotal)
+            : getValueWithDecimals(total)}
         </div>
       </div>
       <button

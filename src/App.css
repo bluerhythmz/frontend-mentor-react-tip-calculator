@@ -47,10 +47,6 @@ body {
   margin: 5rem 0 4rem 0;
 }
 
-main {
-  width: 100%;
-}
-
 .form {
   padding: 3.2rem;
   background-color: var(--white);
@@ -95,6 +91,10 @@ main {
 .form__input:focus {
   outline: none;
   border: 2px solid var(--text-primary);
+}
+
+.form__input::-moz-placeholder {
+  color: var(--label-text-light);
 }
 
 .input-wrapper {
@@ -224,10 +224,6 @@ main {
 .error-border:focus {
   outline: 0;
   border: 2px solid var(--error);
-}
-
-.no-bill {
-  color: var(--label-text-light);
 }
 
 @media (min-width: 1200px) {
