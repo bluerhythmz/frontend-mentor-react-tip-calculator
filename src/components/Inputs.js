@@ -30,7 +30,7 @@ const Inputs = ({
         />
         <img src={dollarSign} alt="dollar-sign" className="input-icon" />
       </div>
-      <label htmlFor="" className="form__label">
+      <label htmlFor="tip" className="form__label">
         Select Tip %
       </label>
       <div className="grid">
