@@ -50,7 +50,7 @@ const Form = () => {
 
   let tipAmount = people > 0 ? (parseInt(bill) * (parseInt(tipPercent) / 100)) / parseInt(people) : 0;
   let customTipAmount = parseInt(bill) * (parseInt(customTipPercent) / 100);
-  let total = people > 0 ? (parseInt(bill) + tipAmount) / parseInt(people) : 0;
+  let total = people > 0 ? (parseInt(bill) / parseInt(people)) + tipAmount : 0;
   let customTipTotal =
     people && customTipAmount
       ? (parseInt(bill) + customTipAmount) / parseInt(people)
